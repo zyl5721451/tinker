@@ -1,7 +1,7 @@
-apply plugin: 'maven-publish'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'//为什么要用maven-publish?
+apply plugin: 'com.github.dcendents.android-maven'//maven?
 
-android {
+android {//统一jdk版本
     compileOptions {
         sourceCompatibility rootProject.ext.javaVersion
         targetCompatibility rootProject.ext.javaVersion
@@ -11,20 +11,20 @@ version = version
 group = GROUP
 
 install {
-    repositories.mavenInstaller {
+    repositories.mavenInstaller {//产生pom
         // This generates POM.xml with proper parameters
         pom.project {
             name POM_NAME
             artifactId POM_ARTIFACT_ID
             packaging POM_PACKAGING
             description POM_DESCRIPTION
-            url POM_URL
+            url POM_URL//项目主页
 
             scm {
-                url POM_SCM_URL
+                url POM_SCM_URL//git主页
             }
 
-            licenses {
+            licenses {//版权信息
                 license {
                     name POM_LICENCE_NAME
                     url POM_LICENCE_URL
@@ -32,7 +32,7 @@ install {
                 }
             }
 
-            developers {
+            developers {//开发者信息
                 developer {
                     id POM_DEVELOPER_ID
                     name POM_DEVELOPER_NAME
@@ -60,8 +60,8 @@ task androidSourcesJar(type: Jar) {
 }
 
 artifacts {
-    archives androidSourcesJar
-    archives androidJavadocsJar
+    archives androidSourcesJar//source
+    archives androidJavadocsJar//javaDoc
 }
 
 
