@@ -90,6 +90,13 @@ public class TinkerPatchService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         final Context context = getApplicationContext();
         Tinker tinker = Tinker.with(context);
         tinker.getPatchReporter().onPatchServiceStart(intent);

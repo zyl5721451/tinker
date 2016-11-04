@@ -29,6 +29,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         buildInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Toast.makeText(MainActivity.this,"张乙龙", Toast.LENGTH_LONG).show();
                 showInfo(MainActivity.this);
             }
         });
